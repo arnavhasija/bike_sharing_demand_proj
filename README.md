@@ -8,7 +8,6 @@ Being an avid biker myself, I wanted to explore factors that may impact the rent
 
 Another reason I chose the bike sharing demand competition over other options is because I thought there are some interesting insights that can be drawn from this dataset. For instance, weather conditions such as clear, cloudy, or rainy day along with feels like temperature, relative humidity, and windspeed are all factors that influence the number of bikes rented on a given day or hour. This meant that new features to capture favorable conditions for biking could be created to capture how the weather conditions would jointly affect the rentals. Even though this would be considered time series data, the datetime feature can be decomposed into separate features such as day, time, hour, and a log-linear model can be used to make predictions.
 
-
 <b>Exploratory Data Analysis(EDA)</b>
 I built a log linear regression model to predict the number of bike rentals. The first step was to understand the structure of the data and look at the summary statistics of the features.
 
@@ -28,11 +27,9 @@ I also looked at distribution of all the features along with the count. While th
 
 ![](/images/bike_data_log_transform_training_histogram.JPG)
 
-
 I created a boxplot to check for outliers for the count variable. There appear to be many outliers on the higher end of the spectrum that can impact model performance. For the first few model iterations I decided to keep them and then later drop some of them to determine how if the model performance improves.
 
 ![](/images/boxplot.JPG)
-
 
 <b> Feature Engineering </b>
 
@@ -67,4 +64,3 @@ Cook's Distance Plot: Since some outliers were removed from the test data, there
 ![](/images/final_model_results.JPG)
 
 The adjusted R-squared in the final model was much better compared to the previous models. This means that a much greater proportion of variation in the number of bike rentals can be explained by the predictors in the model. The residual standard error of 0.4223 can further be improved. To get better results, regularization techniques such as Lasso/Ridge can also be applied to deal with issues such as overfitting which may be impacting the model performance.
-
